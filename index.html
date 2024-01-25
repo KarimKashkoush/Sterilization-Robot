@@ -3,18 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sterilization Robot</title>
     <!-- Font Awesome Css -->
     <link rel="stylesheet" href="assets/css/all.css">
     <!-- google font -->
-    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <!-- Normalize css file -->
     <link rel="stylesheet" href="assets/css/normalize.css">
     <!-- css file -->
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-    
+    <!-- Start Form -->
+    <section class="body_sign">
+        <section class="container">
+            <section class="form" id="form">
+                <form class="signUp" onclick="signIn()">
+                    <h2>تسجيل حساب جديد</h2>
+                    <p>هل لديك حساب ؟ <span id="signIn">تسجيل دخول</span></p>
+                    <section class="name">
+                        <section class="f-name">
+                            <input type="text" placeholder="الاسم الأول">
+                        </section>
+                        <section class="l-name">
+                            <input type="text" placeholder="الاسم الثاني">
+                        </section>
+                    </section>
+                    <section class="email">
+                        <input type="text" placeholder="الايميل الشخصي">
+                    </section>
+                    <section class="password">
+                        <input type="text" placeholder="كلمة المرور">
+                    </section>
+                    <section class="rPassword">
+                        <input type="text" placeholder="اعادة كلمة المرور">
+                    </section>
+                    <button class="btn">تسجيل حساب</button>
+                </form>
+                <form class="signIn" id="formSignIn" action="home.html">
+                    <h2>تسجيل دخول</h2>
+                    <p>ليس لديك حساب ؟ <span onclick="signUp()">قم بتسجيل حساب جديد.</span></p>
+                    <section class="sign-in-data">
+                        <section class="email">
+                            <input type="text" placeholder="اسم المستخدم">
+                        </section>
+                        <section class="password">
+                            <input type="text" placeholder="كلمة المرور">
+                        </section>
+                        <button class="btn">تسجيل دخول</button>
+                    </section>
+                </form>
+            </section>
+        </section>
+    </section>
+    <!-- End Form -->
     <!-- Font Awesome Js -->
     <script src="assets/js/all.js"></script>
     <!-- Js file -->

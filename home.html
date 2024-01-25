@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sterilization Robot</title>
+    <!-- Font Awesome Css -->
+    <link rel="stylesheet" href="assets/css/all.css">
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Normalize css file -->
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <!-- css file -->
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+    <!-- Start Home -->
+    <section class="home">
+        <section class="container">
+            <h2>بدء عملية تعقيم</h2>
+            <section class="form-time">
+                <section class="name">
+                    <input type="text" placeholder="الاسم" id="nameFormTimer">
+                </section>
+                <section class="id">
+                    <input type="text" placeholder="الرقم التعريفي" id="idFormTimer">
+                </section>
+                <section class="time">
+                    <input type="text" placeholder="مدة التعقيم بالدقيقة" id="timeFormTimer">
+                </section>
+                <section class="place">
+                    <select id="locationFormTimer">
+                        <option value="00">مكان التعقيم</option>
+                        <option value="غرفة عمليات 1">غرفة عمليات 1</option>
+                        <option value="غرفة عمليات 2">غرفة عمليات 2</option>
+                        <option value="غرفة اقامة مريض 1">غرفة اقامة مريض 1</option>
+                        <option value="غرفة اقامة مريض 2">غرفة اقامة مريض 2</option>
+                        <option value="غرفة مريض 3">غرفة اقامة مريض 3</option>
+                    </select>
+                </section>
+                <button class="btn" onclick="dataTimer(); openTimer()">بدء</button>
+            </section>
+        </section>
+    </section>
+    <!-- Start Home -->
+    <!-- Start Time -->
+    <section class="showTime" id="showTime">
+        <section class="close-timer" onclick="closeTimer()">
+            <i class="fa-solid fa-xmark"></i>
+        </section>
+        <p>الاسم: <span id="nameShow">12</س></p>
+        <p>الرقم التعريفي: <span id="idShow">12</س></p>
+        <p>مدة التعقيم: <span id="timeShow">12</س></p>
+        <p>مكان التعقيم: <span id="placeShow">12</س></p>
+        <p>الوقت المتبقي: <span id="timer">2:22:22</span></p>
+    </section>
+    <!-- End Time -->
+
+    <!-- Font Awesome Js -->
+    <script src="assets/js/all.js"></script>
+    <!-- Js file -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

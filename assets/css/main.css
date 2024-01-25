@@ -1,7 +1,7 @@
 :root {
     --main-color: #000;
     --sub-color: #000;
-    --w-color: #000;
+    --w-color: #fff;
     --b-color: #000;
     --main-text-color: #000;
     --sub-text-color: #000;
@@ -9,7 +9,7 @@
     --fw-Medium-500: 500;
     --fw-SemiBold-600: 600;
     --fw-Bold-700: 700;
-    --fw-ExtraBold-800 : 800;
+    --fw-ExtraBold-800: 800;
 
     --transition-3: ease 0.3s;
     --transition-5: ease 0.5s;
@@ -24,6 +24,17 @@
 
 body {
     scroll-behavior: smooth;
+    direction: rtl;
+}
+
+body,
+input,
+input::placeholder,
+button,
+select {
+    font-family: "Cairo", sans-serif;
+    outline: none;
+    border: none;
 }
 
 @media (max-width: 786px) {
@@ -111,3 +122,202 @@ a {
         width: 1150px;
     }
 }
+
+/* Start Form */
+.body_sign {
+    height: 100vh;
+    background-image: url(../images/bg.jpg);
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.body_sign .container {
+    width: 360px;
+    height: 350px;
+    position: relative;
+    border: 2px solid var(--b-color);
+    border-radius: 15px;
+    text-align: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.form {
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    transition: right var(--transition-5);
+}
+
+.form .signIn,
+.form .signUp {
+    flex: 1;
+    width: 340px;
+    position: relative;
+}
+.sign-in-data {
+    margin-top: 50px;
+}
+.body_sign .container .name {
+    display: flex;
+    gap: 10px;
+}
+
+.signUp input,
+.signIn input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 100px;
+    margin-bottom: 10px;
+    text-align: center;
+    background-color: rgba(15, 15, 15, 0.2);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    color: var(--w-color);
+}
+
+.signUp input::placeholder,
+.signIn input::placeholder {
+    color: var(--w-color);
+}
+
+.body_sign .container .btn {
+    padding: 10px;
+    border-radius: 100px;
+    background-color: rgba(15, 15, 15, 0.2);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    color: var(--w-color);
+    display: flex;
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: var(--transition-3);
+}
+
+.body_sign .container .btn:hover {
+    scale: 1.1;
+}
+
+.signUp h2,
+.signIn h2 {
+    margin-bottom: 10px;
+    color: var(--w-color);
+}
+
+.signUp p,
+.signIn p {
+    margin-bottom: 20px;
+    color: var(--w-color);
+}
+
+.signUp p span,
+.signIn p span {
+    color: var(--b-color);
+    text-decoration: underline;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* End Form */
+
+
+/* Start home */
+.home {
+    height: 100vh;
+    background-image: url(../images/Robot.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home .container h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.home .container {
+    width: 350px;
+    background-color: rgba(15, 15, 15, 0.2);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.home .container .form-time input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 100px;
+    text-align: center;
+}
+
+.home .container .form-time select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 100px;
+}
+
+.home .container .form-time select option {
+    margin: 10px;
+    font-size: 16px;
+}
+
+.home .container .form-time .btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 100px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.showTime {
+    position: fixed;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(15, 15, 15, 0.2);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 10px;
+    width: 75%;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 15px;
+}
+.close-timer {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    border: 1px solid;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.time p {
+    color: var(--w-color);
+    font-size: 20px;
+    font-weight: var(--fw-Bold-700);
+}
+.time p span {
+    font-size: 16px;
+}
+/* End home */
