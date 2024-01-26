@@ -18,9 +18,9 @@
     <section class="body_sign">
         <section class="container">
             <section class="form" id="form">
-                <form class="signUp" onclick="signIn()">
+                <form class="signUp">
                     <h2>تسجيل حساب جديد</h2>
-                    <p>هل لديك حساب ؟ <span id="signIn">تسجيل دخول</span></p>
+                    <p>هل لديك حساب ؟ <span id="signIn" onclick="signIn()">تسجيل دخول</span></p>
                     <section class="name">
                         <section class="f-name">
                             <input type="text" placeholder="الاسم الأول">
@@ -43,15 +43,13 @@
                 <form class="signIn" id="formSignIn" action="home.html">
                     <h2>تسجيل دخول</h2>
                     <p>ليس لديك حساب ؟ <span onclick="signUp()">قم بتسجيل حساب جديد.</span></p>
-                    <section class="sign-in-data">
-                        <section class="email">
-                            <input type="text" placeholder="اسم المستخدم">
-                        </section>
-                        <section class="password">
-                            <input type="text" placeholder="كلمة المرور">
-                        </section>
-                        <button class="btn">تسجيل دخول</button>
+                    <section class="email">
+                        <input type="text" placeholder="اسم المستخدم" id="userNameSignIn">
                     </section>
+                    <section class="password">
+                        <input type="text" placeholder="كلمة المرور" id="userPasswordSignIn">
+                    </section>
+                    <button class="btn">تسجيل دخول</button>
                 </form>
             </section>
         </section>
