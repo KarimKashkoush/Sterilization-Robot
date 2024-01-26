@@ -12,13 +12,14 @@ function signUp() {
 
 function dataTimer() {
     let arrData = [];
-    
+
     // Input Data From user
     let nameFormTimer = document.getElementById("nameFormTimer")
     let idFormTimer = document.getElementById("idFormTimer")
     let timeFormTimer = document.getElementById("timeFormTimer")
     let locationFormTimer = document.getElementById("locationFormTimer")
-    
+
+
     // object Data
     let newTimer = {
         user: nameFormTimer.value,
@@ -27,8 +28,10 @@ function dataTimer() {
         place: locationFormTimer.value
     }
 
+
     // push Data in arr
     arrData.push(newTimer)
+
 
     // Data value to Show
     let nameShow = document.getElementById("nameShow")
@@ -42,7 +45,7 @@ function dataTimer() {
     let min = Math.floor(arrData[arrData.length - 1].timeTimer % 60)
     let sec = (arrData[arrData.length - 1].timeTimer * 60) % 60
 
-    var time = setInterval (counter, 1000)
+    var time = setInterval(counter, 1000)
 
     function counter() {
         sec--
@@ -55,14 +58,24 @@ function dataTimer() {
             hours--
         }
 
+        // 
         if (+(arrData[arrData.length - 1].timeTimer) == 0 || arrData[arrData.length - 1].timeTimer == "") {
             timer.innerHTML = "لا يوجد معلومات"
         } else {
             timer.innerHTML = `${sec} : ${min} : ${hours}`
         }
-        
+
+
         if (hours == 0 && min == 0 && sec == 0) {
-            
+            var locationFormTimerValue = locationFormTimer.value;
+
+            var selectBox = document.getElementById("box" + locationFormTimerValue);
+
+            selectBox.style.backgroundColor = "green"
+
+            localStorage.setItem("box" + locationFormTimerValue, "green");
+
+
             clearInterval(time)
 
             alert("تم انتهاء التعقيم");
@@ -84,12 +97,33 @@ function dataTimer() {
         idShow.innerHTML = newTimer.userId
     }
 
-    if (newTimer.userId == "") {
+    if (newTimer.timeTimer == "") {
         timeShow.innerHTML = "لا يوجد مدة تعقيم"
     } else {
         timeShow.innerHTML = `${newTimer.timeTimer} دقيقة`
     }
-    
+
+
+    if (newTimer.place == "1") {
+        newTimer.place = "غرفة عمليات 1"
+    }
+
+    if (newTimer.place == "3") {
+        newTimer.place = "غرفة اقامة مريض 1"
+    }
+
+    if (newTimer.place == "4") {
+        newTimer.place = "غرفة اقامة مريض 2"
+    }
+
+    if (newTimer.place == "5") {
+        newTimer.place = "غرفة اقامة مريض 3"
+    }
+
+    if (newTimer.place == "2") {
+        newTimer.place = "غرفة عمليات 2"
+    }
+
     if (newTimer.place == "" || newTimer.place == "00") {
         placeShow.innerHTML = "لا يوجد مكان"
     } else {
@@ -103,26 +137,31 @@ function dataTimer() {
     }
 }
 
-
+for (var i = 1; i <= 5; i++) {
+    var storedColor = localStorage.getItem("box" + i);
+    if (storedColor) {
+        document.getElementById("box" + i).style.backgroundColor = storedColor;
+    }
+}
 
 function closeTimer() {
     let showTime = document.getElementById("showTime")
 
-        var result = confirm("هل ترغب في غلق التعقيم بشكل نهائي ؟");
+    var result = confirm("هل ترغب في غلق التعقيم بشكل نهائي ؟");
 
-        if (result == true) {
-            alert("تم غلق التعقيم");
-            location.reload()
-            showTime.style.top ="-100%"
+    if (result == true) {
+        alert("تم غلق التعقيم");
+        location.reload()
+        showTime.style.top = "-100%"
 
-        } else {
-            alert("لن يتم غلق التعقيم");
-        }
-    
+    } else {
+        alert("لن يتم غلق التعقيم");
+    }
+
 }
 
 function openTimer() {
     let showTime = document.getElementById("showTime")
-    showTime.style.top ="50%"
+    showTime.style.top = "50%"
 }
 
