@@ -64,35 +64,73 @@ function dataTimer() {
         if (hours == 0 && min == 0 && sec == 0) {
             clearInterval(time)
             timer.innerHTML = "انتهي وقت التعقيم"
-
-            setTimeout(()=>{
-                location.reload()
-            }, 3000)
         }
     }
 
     // Show All Data
-    nameShow.innerHTML = newTimer.user
-    idShow.innerHTML = newTimer.userId
-    timeShow.innerHTML = `${newTimer.timeTimer} دقيقة`
-    placeShow.innerHTML = newTimer.place
-    timer.innerHTML = newTimer.place
+    if (newTimer.user == "") {
+        nameShow.innerHTML = "لا يوجد اسم"
+    } else {
+        nameShow.innerHTML = newTimer.user
+    }
 
-    let boxs = document.querySelectorAll(".container .box")
+    if (newTimer.userId == "") {
+        idShow.innerHTML = "لا يوجد رقم تعريفي"
+    } else {
+        idShow.innerHTML = newTimer.userId
+    }
 
-    boxs.forEach((e)=> {
-        if (e.querySelector("h2").innerHTML === placeShow.innerHTML) {
-            console.log(e)
-        }
-    })
+    if (newTimer.userId == "") {
+        timeShow.innerHTML = "لا يوجد مدة تعقيم"
+    } else {
+        timeShow.innerHTML = `${newTimer.timeTimer} دقيقة`
+    }
+    
+    if (newTimer.place == "" || newTimer.place == "00") {
+        placeShow.innerHTML = "لا يوجد مكان"
+    } else {
+        placeShow.innerHTML = newTimer.place
+    }
+
+    if (newTimer.place == "") {
+        timer.innerHTML = "لا يوجد مؤقت"
+    } else {
+        timer.innerHTML = newTimer.place
+    }
 }
 
 
+function showConfirmation() {
+    // عرض مربع حوار التأكيد
+    var result = confirm("هل ترغب في تنفيذ الأكواد؟");
+
+    // فحص قيمة الرجوع
+    if (result == true) {
+        // تنفيذ الأكواد عند النقر على "موافق"
+        alert("تم تنفيذ الأكواد!");
+        // يمكنك أضافة الأكواد الإضافية هنا
+    } else {
+        // تنفيذ الأكواد عند النقر على "إلغاء"
+        alert("لم يتم تنفيذ الأكواد.");
+        // يمكنك أضافة الأكواد الإضافية هنا أيضًا
+    }
+}
 
 function closeTimer() {
-    location.reload()
     let showTime = document.getElementById("showTime")
-    showTime.style.top ="-100%"
+
+        var result = confirm("هل ترغب في غلق التعقيم بشكل نهائي ؟");
+
+        // فحص قيمة الرجوع
+        if (result == true) {
+            alert("تم غلق التعقيم");
+            location.reload()
+            showTime.style.top ="-100%"
+
+        } else {
+            alert("لن يتم غلق التعقيم");
+        }
+    
 }
 
 function openTimer() {

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,19 @@
     <!-- Font Awesome Css -->
     <link rel="stylesheet" href="assets/css/all.css">
     <!-- google font -->
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <!-- Normalize css file -->
     <link rel="stylesheet" href="assets/css/normalize.css">
     <!-- css file -->
     <link rel="stylesheet" href="assets/css/main.css">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+
 </head>
+
 <body>
     <!-- Start Home -->
     <section class="home">
@@ -48,11 +56,26 @@
         <section class="close-timer" onclick="closeTimer()">
             <i class="fa-solid fa-xmark"></i>
         </section>
-        <p>الاسم: <span id="nameShow">12</س></p>
-        <p>الرقم التعريفي: <span id="idShow"></س></p>
-        <p>مدة التعقيم: <span id="timeShow"></س></p>
-        <p>مكان التعقيم: <span id="placeShow"></س></p>
-        <p>الوقت المتبقي: <span id="timer"></span></p>
+        <section class="title">
+            <p>الاسم</p>
+            <span id="nameShow">12</span>
+        </section>
+        <section class="title">
+            <p>الرقم التعريفي</p>
+            <span id="idShow"></span>
+        </section>
+        <section class="title">
+            <p>مدة التعقيم</p>
+            <span id="timeShow"></span>
+        </section>
+        <section class="title">
+            <p>مكان التعقيم</p>
+            <span id="placeShow"></span>
+        </section>
+        <section class="title">
+            <p>الوقت المتبقي</p>
+            <span id="timer"></span>
+        </section>
     </section>
     <!-- End Time -->
     <!-- Start Table -->
@@ -85,10 +108,13 @@
             </section>
         </section>
     </section>
+
+
     <!-- End Table -->
     <!-- Font Awesome Js -->
     <script src="assets/js/all.js"></script>
     <!-- Js file -->
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>

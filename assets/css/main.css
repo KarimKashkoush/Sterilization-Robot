@@ -294,14 +294,24 @@ a {
     border-radius: 5px;
 }
 
+.title:not(:last-child) {
+    border-bottom: 1px solid var(--w-color);
+    text-align: center;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
 .showTime p {
+    font-size: 16px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.showTime span {
     color: var(--w-color);
     font-size: 20px;
     font-weight: var(--fw-Bold-700);
-}
-
-.showTime p span {
-    font-size: 16px;
+    text-align: center;
 }
 
 /* End Home */
