@@ -153,6 +153,14 @@ shangeColor.forEach((e)=> {
     }
 })
 
+let boxs = document.querySelectorAll(".box");
+
+boxs.forEach((b)=> {
+    if (b.style.backgroundColor == "green") {
+        b.querySelector("p").innerHTML = "معقم"
+    }
+})
+
 function closeTimer() {
     let showTime = document.getElementById("showTime")
 

@@ -215,7 +215,6 @@ a {
     cursor: pointer;
     color: var(--w-color);
 }
-
 /* End Form */
 
 /* Start Home */
@@ -224,6 +223,7 @@ a {
     background-image: url(../images/Robot.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
