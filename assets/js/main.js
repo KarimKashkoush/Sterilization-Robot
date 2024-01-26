@@ -144,6 +144,15 @@ for (var i = 1; i <= 5; i++) {
     }
 }
 
+let shangeColor = document.querySelectorAll(".box button")
+
+shangeColor.forEach((e)=> {
+    e.onclick = ()=>{
+        localStorage.removeItem(e.parentElement.id);
+        location.reload();
+    }
+})
+
 function closeTimer() {
     let showTime = document.getElementById("showTime")
 
