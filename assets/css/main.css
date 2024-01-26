@@ -304,12 +304,50 @@ a {
     font-size: 16px;
 }
 
-.error {
-    margin-top: 20px;
+/* End Home */
+
+/* Start Table */
+.table {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #f6f6f6;
 }
 
-.error span {
-    margin-bottom: 5px;
-    
+.table .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
 }
-/* End Home */
+
+.table .container .box {
+    background-color: #ff253a;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+}
+
+.table .container .box h2 {
+    margin-bottom: 20px;
+}
+
+.table .container .box p {
+    background-color: #f6f6f6;
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.table .container .box button {
+    background-color: transparent;
+}
+.table .container .box button svg {
+    padding: 10px;
+    border-radius: 3px;
+    background-color: #f6f6f6;
+    cursor: pointer;
+}
+/* End Table */
+
+
