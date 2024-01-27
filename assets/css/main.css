@@ -226,9 +226,20 @@ a {
     background-position: center;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    flex-direction: column;
 }
-
+.date {
+    text-align: center;
+}
+.date h3:not(:last-child) {
+    padding: 5px;
+    border-bottom: 1px solid;
+    direction: ltr;
+}
+.date h3:last-child {
+    padding-top: 5px;
+}
 .home .container h2 {
     margin-bottom: 20px;
     text-align: center;

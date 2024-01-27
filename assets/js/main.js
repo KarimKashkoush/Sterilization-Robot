@@ -146,8 +146,8 @@ for (var i = 1; i <= 5; i++) {
 
 let shangeColor = document.querySelectorAll(".box button")
 
-shangeColor.forEach((e)=> {
-    e.onclick = ()=>{
+shangeColor.forEach((e) => {
+    e.onclick = () => {
         localStorage.removeItem(e.parentElement.id);
         location.reload();
     }
@@ -155,7 +155,7 @@ shangeColor.forEach((e)=> {
 
 let boxs = document.querySelectorAll(".box");
 
-boxs.forEach((b)=> {
+boxs.forEach((b) => {
     if (b.style.backgroundColor == "green") {
         b.querySelector("p").innerHTML = "معقم"
     }
@@ -182,3 +182,72 @@ function openTimer() {
     showTime.style.top = "50%"
 }
 
+
+let gitDate = setInterval(() => {
+    let tim = new Date()
+    
+    let h = tim.getHours() 
+    let m = tim.getMinutes() 
+    let s = tim.getSeconds()
+    let day = tim.getDay()
+    let date = tim.getDate()  
+    let mon = (tim.getMonth() + 1)
+    let year = (tim.getFullYear())
+    let situation;
+
+    if (h < 12) {
+        situation = "AM"
+    } else {
+        situation = "PM"
+    }
+
+    if (day == 0) {
+        day = "الأحد"
+    } else if (day == 1) {
+        day = "الاثنين"
+    } else if (day == 2) {
+        day = "الثلاثاء"
+    } else if (day == 3) {
+        day = "الأربعاء"
+    } else if (day == 4) {
+        day = "الخميس"
+    } else if (day == 5) {
+        day = "الجمعة"
+    } else if (day == 6) {
+        day = "السبت"
+    }
+    
+    if (h > 12) {
+        h -= 12
+    } else {
+        h = h
+    }
+    
+    if (s <= 9) {
+        s =  "0" + s
+    } else {
+        s = s
+    }
+    
+    if (m <= 9) {
+        m =  "0" + m
+    } else {
+        m = m
+    }
+    
+    if (h <= 9) {
+        h =  "0" + h
+    } else {
+        h = h
+    }
+    
+    let timeNow = document.getElementById("timeNow");
+    let dateNow = document.getElementById("dateNow");
+    let dayNow = document.getElementById("dayNow");
+
+    
+    timeNow.innerHTML = `${h} : ${m} : ${s} ${situation}`
+    dateNow.innerHTML = `${date} / ${mon} / ${year}`
+    dayNow.innerHTML = day
+
+}, 1000);
