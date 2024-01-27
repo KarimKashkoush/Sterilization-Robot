@@ -218,7 +218,7 @@ let gitDate = setInterval(() => {
         day = "السبت"
     }
     
-    if (h >= 13) {
+    if (h > 12) {
         h -= 12
     } else {
         h = h
