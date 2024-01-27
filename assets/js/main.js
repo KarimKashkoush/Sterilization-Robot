@@ -158,6 +158,7 @@ let boxs = document.querySelectorAll(".box");
 boxs.forEach((b) => {
     if (b.style.backgroundColor == "green") {
         b.querySelector("p").innerHTML = "معقم"
+        b.querySelector("button").style.display= " block"
     }
 })
 
@@ -240,7 +241,7 @@ let gitDate = setInterval(() => {
     } else {
         h = h
     }
-    
+
     let timeNow = document.getElementById("timeNow");
     let dateNow = document.getElementById("dateNow");
     let dayNow = document.getElementById("dayNow");

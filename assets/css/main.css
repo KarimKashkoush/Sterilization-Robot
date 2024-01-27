@@ -370,6 +370,8 @@ a {
 
 .table .container .box button {
     background-color: transparent;
+    margin: auto;
+    display: none;
 }
 
 .table .container .box button svg {
